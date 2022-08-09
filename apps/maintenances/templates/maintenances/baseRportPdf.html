@@ -6,8 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+    }
     body {
       width: 100%;
       height: 100%;
@@ -117,11 +126,71 @@
       border-right: 1px solid rgba(51, 51, 51, .5);
     }
 
+    table {
+      width: auto;
+      font-size: 13px;
+      border-collapse: collapse;
+    }
+    tr {
+      border-bottom: .1px solid #333;
+      height: 14px;
+      width: 100%;
+    }
+    .row {
+      width: 100%;
+      display: flex;
+      background: red;
+      border-bottom: 1px solid #333;
+    }
+    .cuestion {
+      font-weight: bold;
+      background: rgba(233, 233, 233, 0.2);
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    .cuestion::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      bottom: -1px;
+      left: 0;
+      background: white;
+    }
 
+    .cuestion {
+      width: min-content;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .response {
+      width: max-content;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .response span {
+      padding: 0 .5rem;
+    }
+
+    .signature {
+      margin-top: 4rem;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .signature p {
+      max-width: 35rem;
+      padding: 0 .5rem;
+      border-top: .1rem solid #333;
+    }
 
     @page {
       size: "Legal";
-      margin: .5cm .5cm .5cm 1cm;
+      margin: .5cm 1cm .5cm 1.5cm;
     }
   </style>
 </head>
@@ -157,15 +226,67 @@
       <p>Formato No. SIIMP-AT-004 V. 1.0/2022</p>
     </div>
   </header>
+
   <main>
     <section class="front-info">
-      <div class="">
-        <p>Persona responsable del equipo: <span>Person</span></p>
-        <p>NIP: <span>20190439</span></p>
+
+      <table align="center">
+        <tr>
+          <td class="cuestion">
+            Persona responsable del equipo de computo:
+          </td>
+          <td class="response">
+            <span>
+              Kevin Alberto Palma Ralda
+            </span>
+          </td>
+          <td class="cuestion">NIP:</td>
+          <td class="response">
+            <span>
+              20190439
+            </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="cuestion">
+            Fiscalía:
+          </td>
+          <td class="response">
+            <span>
+              Fiscalia de Distrito Chiquimula
+            </span>
+          </td>
+          <td class="cuestion">Ag:</td>
+          <td class="response">
+            <span>
+              20190439
+            </span>
+          </td>
+          <td class="cuestion">Fecha Mante:</td>
+          <td class="response">
+            <span>
+              20190439
+            </span>
+          </td>
+        </tr>
+        
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+      </table>
+
+      <div class="signature">
+        <p>Firma y sello del usuario o persna que avale el mantenimiento</p>
       </div>
+      
+      
     </section>
+  
     <section class="back-info">
-      <table class="table table-striped">
+      <table class="" border="none">
         <thead>
           <tr>
             <th>Aspecto</th>
