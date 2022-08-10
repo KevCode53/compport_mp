@@ -100,10 +100,13 @@
     }
 
     .back-info {
+      padding: 4rem;
+      height: 6.2in;
       width: 100%;
       display: grid;
       place-content: center;
       align-items: center;
+
     }
     .back-info table {
       width: 25rem;
@@ -126,6 +129,16 @@
       border-right: 1px solid rgba(51, 51, 51, .5);
     }
 
+    .front-info {
+      height: 4.2in;
+      width: 100%;
+      display: grid;
+      place-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+      font-size: 12px;
+    }
+
     table {
       width: auto;
       font-size: 13px;
@@ -136,44 +149,39 @@
       height: 14px;
       width: 100%;
     }
-    .row {
+    .cuestion::after {
+      content: "";
+      position: absolute;
       width: 100%;
-      display: flex;
-      background: red;
-      border-bottom: 1px solid #333;
+      height: 4px;
+      background: white;
+      left: 0;
+      bottom: -1px;
     }
-    .cuestion {
+    .response {
+      padding: 0 1rem;
+    }
+
+    /* .cuestion {
       font-weight: bold;
-      background: rgba(233, 233, 233, 0.2);
       margin: 0;
       padding: 0;
       position: relative;
-    }
-    .cuestion::after {
+    } */
+    /* .cuestion::after {
       content: "";
       position: absolute;
       width: 100%;
       height: 3px;
       bottom: -1px;
       left: 0;
-      background: white;
-    }
-
-    .cuestion {
-      width: min-content;
-      max-width: 100%;
-      margin: 0;
-      padding: 0;
-    }
-    .response {
+    } */
+    /* .response {
       width: max-content;
       text-align: center;
       margin: 0;
       padding: 0;
-    }
-    .response span {
-      padding: 0 .5rem;
-    }
+    } */
 
     .signature {
       margin-top: 4rem;
@@ -189,7 +197,8 @@
     }
 
     @page {
-      size: "Legal";
+      size: 8.2in;
+      height: 6.2in;
       margin: .5cm 1cm .5cm 1.5cm;
     }
   </style>
@@ -229,6 +238,51 @@
 
   <main>
     <section class="front-info">
+      <div 
+        style="
+          border-bottom: 1px solid #333;
+          display: flex;
+          width: 100%;
+        ">
+        <!-- firts Group -->
+        <div 
+          style="
+            display: flex;
+            width: 100%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
+            Persona responsable del equipo de computo:
+          </p>
+          <p class="response">Kevin Alberto Palma Ralda</p>
+        </div>
+        <!-- Second Group -->
+        <div 
+          style="
+            display: flex;
+            width: 30%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
+            NIP:
+          </p>
+          <p class="response">20190439</p>
+        </div>
+      </div>
 
       <table align="center">
         <tr>
