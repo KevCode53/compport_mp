@@ -48,8 +48,8 @@
     .reportInfo {
       position: absolute;
       width: max-content;
-      left: 0;
-      top: 0;
+      left: -1rem;
+      top: -0.5rem;
       display: grid;
       grid-template-rows: 1fr 1fr 1fr; 
     }
@@ -109,20 +109,34 @@
 
     }
     .back-info table {
-      width: 25rem;
+      width: 30rem;
       margin: 0 auto;
-      border: 1px solid #ccc;
+      /* border: 1px solid #ccc; */
     }
     .back-info table thead {
       text-align: center;
-      background: #cfcfcf;
+      border-radius: 30px;
     }
+    .back-info table thead tr th:first-child {
+      background: #cfcfcf;
+      border: 1px solid transparent;
+      border-top-left-radius: .2rem;
+      border-right: solid 1px rgb(255, 255, 255);
+    }
+    .back-info table thead tr th:last-child {
+      background: #cfcfcf;
+      border: 1px solid transparent;
+      border-top-right-radius: .2rem;
+    }
+
+
     .back-info table td {
       border: 1px solid #ccc;
     }
     .back-info table td:first-child {
       background: rgba(233, 233, 233, 0.2);
       min-height: 0.8cm;
+      border-radius: 0.5rem;
     }
 
     .back-info table th:first-child {
@@ -136,8 +150,13 @@
       place-content: center;
       align-items: center;
       margin-bottom: 2rem;
-      font-size: 12px;
+      font-size: 11px;
     }
+
+    .front-info > div {
+      margin-bottom: 0.8rem !important;
+    }
+
 
     table {
       width: auto;
@@ -149,17 +168,25 @@
       height: 14px;
       width: 100%;
     }
+    th, td {
+      padding: 0.5rem;
+      height: 1.2cm;
+    }
     .cuestion::after {
       content: "";
       position: absolute;
       width: 100%;
-      height: 4px;
+      height: 0.4rem;
       background: white;
       left: 0;
-      bottom: -1px;
+      bottom: -0.2rem;
     }
     .response {
+      display: flex;
+      justify-content: center;
       padding: 0 1rem;
+      text-align: center;
+      font-size: 10px;
     }
 
     /* .cuestion {
@@ -184,7 +211,7 @@
     } */
 
     .signature {
-      margin-top: 4rem;
+      margin-top: 8rem;
       display: flex;
       width: 100%;
       justify-content: center;
@@ -199,7 +226,7 @@
     @page {
       size: 8.2in;
       height: 6.2in;
-      margin: .5cm 1cm .5cm 1.5cm;
+      margin: 2cm .5cm .5cm 2.5cm;
     }
   </style>
 </head>
@@ -238,11 +265,14 @@
 
   <main>
     <section class="front-info">
+      
+      <!-- fist row -->
       <div 
         style="
           border-bottom: 1px solid #333;
           display: flex;
           width: 100%;
+          margin-bottom: .5rem;
         ">
         <!-- firts Group -->
         <div 
@@ -284,54 +314,267 @@
         </div>
       </div>
 
-      <table align="center">
-        <tr>
-          <td class="cuestion">
-            Persona responsable del equipo de computo:
-          </td>
-          <td class="response">
-            <span>
-              Kevin Alberto Palma Ralda
-            </span>
-          </td>
-          <td class="cuestion">NIP:</td>
-          <td class="response">
-            <span>
-              20190439
-            </span>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="cuestion">
+      <!-- second row -->
+      <div 
+        style="
+          border-bottom: 1px solid #333;
+          display: flex;
+          width: 100%;
+          margin-bottom: .5rem;
+        ">
+        <!-- firts Group -->
+        <div 
+          style="
+            display: flex;
+            width: 70%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
             Fiscalía:
-          </td>
-          <td class="response">
-            <span>
-              Fiscalia de Distrito Chiquimula
-            </span>
-          </td>
-          <td class="cuestion">Ag:</td>
-          <td class="response">
-            <span>
-              20190439
-            </span>
-          </td>
-          <td class="cuestion">Fecha Mante:</td>
-          <td class="response">
-            <span>
-              20190439
-            </span>
-          </td>
-        </tr>
-        
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-      </table>
+          </p>
+          <p class="response">Fiscalia Municipal de Esquipulas, Chiquimula</p>
+        </div>
+        <!-- Second Group -->
+        <div 
+          style="
+            display: flex;
+            width: 25%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
+            Ag:
+          </p>
+          <p class="response">DICRI</p>
+        </div>
+        <!-- Third Group -->
+        <div 
+          style="
+            display: flex;
+            width: 30%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
+            Fecha:
+          </p>
+          <p class="response">10/08/2022</p>
+        </div>
 
+      </div>
+
+      <!-- third row -->
+      <div 
+        style="
+          border-bottom: 1px solid #333;
+          display: flex;
+          width: 100%;
+          margin-bottom: .5rem;
+        ">
+        <!-- firts Group -->
+        <div 
+          style="
+            display: flex;
+            width: 100%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
+            Tecnico Responsable del mantenimiento:
+          </p>
+          <p class="response">Kevin Alberto Palma Ralda</p>
+        </div>
+      </div>
+
+      <!-- fourth row -->
+      <div 
+        style="
+          display: flex;
+          width: 100%;
+          margin-bottom: .5rem;
+        ">
+        <!-- firts Group -->
+        <div 
+          style="
+            display: flex;
+            width: 100%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
+            Verifiqué que se realizó la limpieza y mantenimiento al equipo de computo a mi cargo identificado con el No.
+          </p>
+        </div>
+      </div>
+
+      <!-- fiveth row -->
+      <div 
+        style="
+          border-bottom: 1px solid #333;
+          display: flex;
+          width: 100%;
+          margin-bottom: .5rem;
+        ">
+        <!-- firts Group -->
+        <div 
+          style="
+            display: flex;
+            width: 70%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
+            de Inventario del CPU:
+          </p>
+          <p class="response">AECI/MP-2017-51.082-2475</p>
+        </div>
+        <!-- Second Group -->
+        <div 
+          style="
+            display: flex;
+            width: 25%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
+            Marca:
+          </p>
+          <p class="response">DELL</p>
+        </div>
+        <!-- Third Group -->
+        <div 
+          style="
+            display: flex;
+            width: 30%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
+            Modelo:
+          </p>
+          <p class="response">Optiplex 3070</p>
+        </div>
+
+      </div>
+
+      <!-- sixeth row -->
+      <div 
+        style="
+          border-bottom: 1px solid #333;
+          display: flex;
+          width: 100%;
+          margin-bottom: .5rem;
+        ">
+        <!-- firts Group -->
+        <div 
+          style="
+            display: flex;
+            width: 70%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
+            Inventario de Impresora:
+          </p>
+          <p class="response">AECI/MP-2017-51.082-2475</p>
+        </div>
+        <!-- Second Group -->
+        <div 
+          style="
+            display: flex;
+            width: 25%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
+            Marca:
+          </p>
+          <p class="response">EPSON</p>
+        </div>
+        <!-- Third Group -->
+        <div 
+          style="
+            display: flex;
+            width: 30%;
+          ">
+          <p 
+            class="cuestion"
+            style="
+              width: min-content;
+              max-width: 100%;
+              font-weight: bold;
+              margin-right: 0.2rem;
+              position: relative;
+            ">
+            Modelo:
+          </p>
+          <p class="response">Optiplex 3070</p>
+        </div>
+
+      </div>
+
+      <!-- seventh row -->
       <div class="signature">
         <p>Firma y sello del usuario o persna que avale el mantenimiento</p>
       </div>
