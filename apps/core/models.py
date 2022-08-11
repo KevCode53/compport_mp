@@ -13,7 +13,7 @@ class User(AbstractBaseUser, PermissionsMixin):
   name = models.CharField(max_length=150, blank=True, null=True)
   last_name = models.CharField(max_length=150, blank=True, null=True)
   image = models.ImageField(upload_to='profile/images', blank=True, null=True)
-  nip = models.CharField(max_length=8)
+  nip = models.CharField('NIP', max_length=8, unique=True)
   
   is_active = models.BooleanField(default=True)
   is_staff = models.BooleanField(default=False)
